@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/Player Scripts/PlayerMovement1.cs" />
     <Compile Include="Assets/Scripts/Knife Scripts/KnifeSpawner.cs" />
+    <Compile Include="Assets/Scripts/Game Manager Scripts/TagManager.cs" />
+    <Compile Include="Assets/Scripts/Knife Scripts/Knife.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

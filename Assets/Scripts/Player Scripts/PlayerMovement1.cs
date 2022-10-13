@@ -36,7 +36,7 @@ public class PlayerMovement1 : MonoBehaviour
 
     void HandleMovement()
     {
-        moveX = Input.GetAxisRaw("Horizontal");
+        moveX = Input.GetAxisRaw(TagManager.HORIZONTAL_AXIS);
 
         tempPos = transform.position;
         
@@ -69,9 +69,17 @@ public class PlayerMovement1 : MonoBehaviour
     void HandleAnimation()
     {
         if (moveX != 0)
-            anim.SetBool("Walk", true);
+            anim.SetBool(TagManager.WALK_ANIMATION_PARAMETER, true);
         else
-            anim.SetBool("Walk", false); 
+            anim.SetBool(TagManager.WALK_ANIMATION_PARAMETER, false); 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag(TagManager.KNIFE_TAG))
+        {
+            
+        }
     }
 
 }
