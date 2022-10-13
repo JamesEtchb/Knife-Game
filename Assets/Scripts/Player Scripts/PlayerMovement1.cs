@@ -16,10 +16,13 @@ public class PlayerMovement1 : MonoBehaviour
     [SerializeField]
     private float min_X = -2f, max_X = 2f;
 
+    [SerializeField]
+    private Animator anim;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        anim=GetComponent<Animator>();
     }
 
     void Update()
@@ -27,6 +30,7 @@ public class PlayerMovement1 : MonoBehaviour
 
         HandleMovement();
         HandleFacingDirection();
+        HandleAnimation();
     
     }
 
@@ -60,7 +64,14 @@ public class PlayerMovement1 : MonoBehaviour
         else if (moveX < 0)
             sr.flipX = true;
         
+    }
 
+    void HandleAnimation()
+    {
+        if (moveX != 0)
+            anim.SetBool("Walk", true);
+        else
+            anim.SetBool("Walk", false); 
     }
 
 }
