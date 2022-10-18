@@ -19,6 +19,8 @@ public class PlayerMovement1 : MonoBehaviour
     [SerializeField]
     private Animator anim;
 
+    private bool isDead;
+
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -27,6 +29,9 @@ public class PlayerMovement1 : MonoBehaviour
 
     void Update()
     {
+
+        if(isDead == true)
+            return;
 
         HandleMovement();
         HandleFacingDirection();
@@ -74,11 +79,23 @@ public class PlayerMovement1 : MonoBehaviour
             anim.SetBool(TagManager.WALK_ANIMATION_PARAMETER, false); 
     }
 
+    void RestartGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag(TagManager.KNIFE_TAG))
+
+        if (isDead)
+            return;
+
+        if (collision.CompareTag(TagManager.KNIFE_TAG))
         {
-            
+            sr.enabled = false;
+            isDead = true;
+
+            Invoke("RestartGame", 2.5f);
         }
     }
 
