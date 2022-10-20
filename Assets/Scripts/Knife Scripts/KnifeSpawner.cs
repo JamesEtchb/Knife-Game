@@ -16,6 +16,7 @@ public class KnifeSpawner : MonoBehaviour
     [SerializeField]
     private float minSpawnTime = 1f, maxSpawnTime = 3f;
 
+
     void Start()
     {
         InvokeRepeating("SpawnKnife", Random.Range(minSpawnTime, maxSpawnTime), Random.Range(minSpawnTime, maxSpawnTime));
