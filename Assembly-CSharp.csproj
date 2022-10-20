@@ -60,6 +60,7 @@
     <Compile Include="Assets/Scripts/Knife Scripts/KnifeSpawner.cs" />
     <Compile Include="Assets/Scripts/Game Manager Scripts/TagManager.cs" />
     <Compile Include="Assets/Scripts/Knife Scripts/Knife.cs" />
+    <Compile Include="Assets/Scripts/SceneLoader/SceneLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

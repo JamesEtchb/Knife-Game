@@ -81,7 +81,7 @@ public class PlayerMovement1 : MonoBehaviour
 
     void RestartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Death");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -95,7 +95,7 @@ public class PlayerMovement1 : MonoBehaviour
             sr.enabled = false;
             isDead = true;
 
-            Invoke("RestartGame", 2.5f);
+            Invoke("RestartGame", 0.5f);
         }
     }
 

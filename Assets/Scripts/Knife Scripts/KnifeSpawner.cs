@@ -16,7 +16,6 @@ public class KnifeSpawner : MonoBehaviour
     [SerializeField]
     private float minSpawnTime = 1f, maxSpawnTime = 3f;
 
-    // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("SpawnKnife", Random.Range(minSpawnTime, maxSpawnTime), Random.Range(minSpawnTime, maxSpawnTime));
@@ -31,9 +30,5 @@ public class KnifeSpawner : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
